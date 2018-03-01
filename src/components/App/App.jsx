@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomePage from 'containers/HomePage';
 import DetailsPage from 'components/DetailsPage';
 import NumberPage from 'containers/NumberPage';
+import MyComponent from'components/MyComponent';
+import AddCompanies from 'components/AddCompanies';
+import ListCompanies from 'components/ListCompanies';
+import AddEmployee from 'components/AddEmployee';
+
 import './styles.less';
 
 class App extends Component {
