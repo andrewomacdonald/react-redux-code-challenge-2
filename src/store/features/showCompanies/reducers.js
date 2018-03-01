@@ -1,15 +1,16 @@
 import types from './types';
 
 const initialState = {
-    companies: ''
+    string: ''
 };
 
 export default function(state = initialState, action) {
     switch(action.type) {
         case types.ADD_COMPANY: {
+            const newString = 'A NEW STRING!!!';
             return {
                 ...state,
-                companies: 'SOMETHING',
+                string: newString,
             };
         }
         default:

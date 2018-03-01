@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import './styles.less';
-
+console.log('PropTypes ', PropTypes);
 const propTypes = {
     addCompany: PropTypes.func.isRequired,
 };
+console.log('addCompany ', addCompany);
+console.log('weedlord bonerhitler ', propTypes);
 
 class ListCompanies extends Component {
     render() {
-        const addCompany = this.props;
+        const { addCompany } = this.props;
         const companies = [
             {
                 name: 'company1',
@@ -40,10 +42,6 @@ class ListCompanies extends Component {
                 id: 'jkl'
             },
             ];
-
-        this.clickyclicky = () => {
-            console.log(companies);
-        };
 
         return (
             <React.Fragment>
