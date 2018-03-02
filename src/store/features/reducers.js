@@ -5,6 +5,5 @@ import showCompanies from './showCompanies/reducers';
 const rootReducer = combineReducers({
   clickCounter,
   showCompanies,
-
 });
 export default rootReducer;
