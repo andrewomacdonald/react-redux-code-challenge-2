@@ -11,9 +11,10 @@ const propTypes = {
 	resetNumberToZero: PropTypes.func.isRequired,
 };
 
+
 class HomePage extends Component {
 	render() {
-		const {	increment, decrement, resetNumberToZero } = this.props;
+		const {	increment, decrement, resetNumberToZero, addCompany } = this.props;
 		return (
 			<React.Fragment>
 				<div className="home__wrapper">

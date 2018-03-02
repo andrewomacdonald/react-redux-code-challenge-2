@@ -6,12 +6,10 @@ console.log('PropTypes ', PropTypes);
 const propTypes = {
     addCompany: PropTypes.func.isRequired,
 };
-console.log('addCompany ', addCompany);
-console.log('weedlord bonerhitler ', propTypes);
 
 class ListCompanies extends Component {
     render() {
-        const { addCompany } = this.props;
+        // const { addCompany } = this.props;
         const companies = [
             {
                 name: 'company1',
@@ -45,7 +43,7 @@ class ListCompanies extends Component {
 
         return (
             <React.Fragment>
-                <Button onClick={addCompany} type="submit">Submit</Button>
+                <Button onClick={this.props.addCompany} type="submit">Submit</Button>
                 <div>
                 {companies.map(company => {
                     return <div key={company.id}>
