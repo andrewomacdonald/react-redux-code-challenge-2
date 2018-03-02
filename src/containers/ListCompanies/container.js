@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import ListCompanies from 'components/ListCompanies';
 import actions from 'store/features/showCompanies/actions'
 
-const mapDispatchToProps = dispatch => ({
-    addCompany: () => dispatch(actions.addCompany()),
+const mapStateToProps = state => ({
+    companies: state.showCompanies.companies
 });
 
-export default connect(null, mapDispatchToProps)(ListCompanies);
+export default connect(mapStateToProps)(ListCompanies);
 

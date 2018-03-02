@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import './styles.less';
-console.log('PropTypes ', PropTypes);
+
 const propTypes = {
-    addCompany: PropTypes.func.isRequired,
+        companies: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            phone: PropTypes.string,
+            revenue: PropTypes.string,
+        })),
 };
 
 class ListCompanies extends Component {
@@ -41,24 +46,22 @@ class ListCompanies extends Component {
             },
             ];
 
-        return (
-            <React.Fragment>
-                <Button onClick={this.props.addCompany} type="submit">Submit</Button>
-                <div>
-                {companies.map(company => {
-                    return <div key={company.id}>
-                        Name:{company.name}
-                        <br />
-                        Number: {company.number}
-                        <br />
-                        Revenue: {company.revenue}
-                    </div>
-                })
-                }
-                </div>
-            </React.Fragment>
-        );
-    }
+                    return (
+                    <React.Fragment>
+                            <div>
+                            {this.props.companies.map(company => (
+                               <div key={company.phone}>
+                	                      <span>Name:</span><span>{company.name}</span>
+                                        <br />
+                	                      <span>Number:</span><span>{company.phone}</span>
+                                        <br />
+                	                      <span>Revenue:</span><span>{company.revenue}</span>
+                                    </div>)
+                        )}
+                            </div>
+                       </React.Fragment>
+                );
+            }
 }
 
 ListCompanies.propTypes = propTypes;
