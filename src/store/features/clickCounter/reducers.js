@@ -1,37 +1,35 @@
 import types from './types';
-import { createDefaultReducer } from '../../helpers'
+import { createDefaultReducer } from '../../helpers';
 
 const initialState = {
-  number: 0
+  number: 0,
 };
 
 const incrementNumberHandler = (state, payload) => {
-  const number = state.number + 1
+  const number = state.number + 1;
   return {
     ...state,
-    number
-  }
+    number,
+  };
 };
 
 const decrementNumberHandler = (state, payload) => {
-  const number = state.number - 1
+  const number = state.number - 1;
   return {
     ...state,
-    number
-  }
+    number,
+  };
 };
 
-const resetNumberHandler = (state, payload) => {
-  return {
-    ...state,
-    number: 0
-  }
-}
+const resetNumberHandler = (state, payload) => ({
+  ...state,
+  number: 0,
+});
 
 const actionMap = {
   [types.INCREMENT_NUMBER]: incrementNumberHandler,
   [types.DECREMENT_NUMBER]: decrementNumberHandler,
-  [types.RESET_TO_ZERO]: resetNumberHandler
+  [types.RESET_TO_ZERO]: resetNumberHandler,
 };
 
-export default createDefaultReducer(actionMap, initialState)
+export default createDefaultReducer(actionMap, initialState);

@@ -5,15 +5,15 @@
  * @param {object by default} [initialState={}]
  * @returns a function to manage state of a particular section of the app state
  */
-export default function createDefaultReducer (
+export default function createDefaultReducer(
   actionMap = {},
-  initialState = {}
+  initialState = {},
 ) {
   /**
    * This is the reducer function that takes in the previous app state and the action fired, and returns the next app state.
    */
-  function defaultReducer (state = initialState, { payload, type } = {}) {
-    return actionMap[type] ? actionMap[type](state, payload) : state
+  function defaultReducer(state = initialState, { payload, type } = {}) {
+    return actionMap[type] ? actionMap[type](state, payload) : state;
   }
-  return defaultReducer
+  return defaultReducer;
 }

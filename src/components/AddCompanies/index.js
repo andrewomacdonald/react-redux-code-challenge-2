@@ -1,1 +1,1 @@
-export { default }  from './AddCompanies';
+export { default } from './AddCompanies';

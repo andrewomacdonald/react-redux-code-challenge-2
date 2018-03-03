@@ -9,6 +9,7 @@ const propTypes = {
 
 class AddCompanies extends Component {
 	constructor(props) {
+		console.log('add company props ', props);
 		super(props);
 		this.state = {
 			name: '',

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import rootReducer from 'store/features/reducers'
+import rootReducer from 'store/features/reducers';
 import './src/index.less';
 import App from 'components/App';
 
@@ -13,11 +13,11 @@ So to make things a little easier for you I've added the redux-devtools-extensio
 documentation found here: https://github.com/zalmoxisus/redux-devtools-extension
 */
 
-let store = createStore(rootReducer, devToolsEnhancer());
+const store = createStore(rootReducer, devToolsEnhancer());
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import './styles.less';
 import AddCompanies from 'containers/AddCompanies';
 import ListCompanies from 'containers/ListCompanies';
-import AddEmployee from '../AddEmployee';
+import AddEmployee from 'containers/AddEmployee';
+import ListEmployees from 'containers/ListEmployees';
 
 const propTypes = {
 	increment: PropTypes.func.isRequired,
@@ -33,6 +34,7 @@ class HomePage extends Component {
 						<AddCompanies />
 						<br />
 						<AddEmployee />
+						<ListEmployees />
 					</div>
 				</div>
 		);
