@@ -23,7 +23,7 @@ export default function(state = initialState, action) {
         case types.ADD_EMPLOYEE:
         {
             console.log('I AM A CASE');
-            const newEmployees = [...state];
+            const newEmployees = [...state.employees];
             newEmployees.push(action.employee);
 
             return {

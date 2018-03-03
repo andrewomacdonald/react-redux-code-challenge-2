@@ -14,6 +14,7 @@ const propTypes = {
 
 class ListEmployees extends Component {
     render() {
+        console.log('gaylord bonerhitler ',this.props.employees);
         return (
             <React.Fragment>
                 {this.props.employees.map(employee =>

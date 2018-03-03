@@ -41,7 +41,7 @@ class AddEmployee extends Component {
         return (
             <div>
             <Form horizontal id="addEmployee">
-                <FormGroup controlId="Name">
+                <FormGroup controlId="name">
                 <ControlLabel>Name:</ControlLabel>
                 <FormControl
                     type="text"
@@ -50,7 +50,7 @@ class AddEmployee extends Component {
                     onChange={this.handleFormControlChange}
                 />
             </FormGroup>
-            <FormGroup controlId="Phone">
+            <FormGroup controlId="phone">
                 <ControlLabel>Name:</ControlLabel>
                 <FormControl
                     type="text"
@@ -59,7 +59,7 @@ class AddEmployee extends Component {
                     onChange={this.handleFormControlChange}
                 />
             </FormGroup>
-            <FormGroup controlId="Email">
+            <FormGroup controlId="email">
                 <ControlLabel>Name:</ControlLabel>
                 <FormControl
                     type="text"
