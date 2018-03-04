@@ -17,8 +17,8 @@ class HomePage extends Component {
 	render() {
 		const {	increment, decrement, resetNumberToZero, addCompany } = this.props;
 		return (
-				<div className="home__wrapper">
-					<div className="home__abacus">
+				<div className="homePage">
+					<div>
 						<button	onClick={increment}>
 							Increment
 						</button>
@@ -29,13 +29,10 @@ class HomePage extends Component {
 							Reset Number
 						</button>
 					</div>
-					<div className="container">
 						<ListCompanies />
 						<AddCompanies />
 						<br />
 						<AddEmployee />
-						<ListEmployees />
-					</div>
 				</div>
 		);
 	}

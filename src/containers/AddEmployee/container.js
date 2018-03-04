@@ -6,4 +6,8 @@ const mapDispatchToProps = dispatch => ({
     addEmployee: employee => dispatch(actions.addEmployee(employee)),
 });
 
-export default connect(null, mapDispatchToProps)(AddEmployee);
+const mapStateToProps = state => ({
+    companies: state.showCompanies.companies,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddEmployee);

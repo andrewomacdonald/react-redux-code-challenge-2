@@ -16,10 +16,12 @@ class AddEmployee extends Component {
             name: '',
             phone: '',
             email: '',
+            company: null,
         };
 
         this.addNewEmployee = this.addNewEmployee.bind(this);
         this.handleFormControlChange = this.handleFormControlChange.bind(this);
+        this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
     addNewEmployee(e) {
@@ -30,16 +32,19 @@ class AddEmployee extends Component {
 
     handleFormControlChange(e) {
         const { value, id } = e.target;
-        console.log('weedlord bonerhitler ', value);
-        console.log('bonerhitler ', id)
         this.setState({
             [id]: value,
         });
     }
 
+    handleDropdownChange(e) {
+        const { value } = e.target;
+        const employeeCompany = this.props.companies.filter(company => company.name === value);
+        this.state.company = employeeCompany;
+    }
+
     render() {
         return (
-            <div>
             <Form horizontal id="addEmployee">
                 <FormGroup controlId="name">
                 <ControlLabel>Name:</ControlLabel>
@@ -68,6 +73,19 @@ class AddEmployee extends Component {
                     onChange={this.handleFormControlChange}
                 />
             </FormGroup>
+                <br />
+            <FormGroup controlId="company">
+                <ControlLabel>Select Company</ControlLabel>
+                <FormControl
+                    componentClass="select"
+                    placeholder="select"
+                    onChange={this.handleDropdownChange}>
+                        {this.props.companies.map(company =>
+                            <option key={company.phone}>{company.name}</option>
+                        )}
+                </FormControl>
+            </FormGroup>
+                <br />
                 <Button
                     type="button"
                     form="addEmployee"
@@ -76,7 +94,6 @@ class AddEmployee extends Component {
                     SUBMIT EMPLOYEE
                 </Button>
             </Form>
-                </div>
         );
     }
 }
